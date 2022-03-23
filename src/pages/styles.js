@@ -39,3 +39,7 @@ export const Button = styled.button`
       color: white;
     `}
 `;
+
+export const GridContainer = styled.div`
+  margin-top: 20px;
+`;
