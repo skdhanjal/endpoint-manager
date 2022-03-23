@@ -6,6 +6,8 @@ export const CardContainer = styled.div`
   width: 200px;
   border: 2px solid black;
   margin-bottom: 40px;
+  margin-right: 40px;
+
   cursor: pointer;
 
   &.selected {
