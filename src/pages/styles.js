@@ -30,6 +30,7 @@ export const CardsContainer = styled.div`
 
   @media ${device.tablet} {
     flex-direction: row;
+    justify-content: space-between;
   }
 `;
 
@@ -43,7 +44,7 @@ export const ActionContainer = styled.div`
   }
 
   @media ${device.laptopL} {
-    margin-right: 110px;
+    margin-right: 0px;
   }
 `;
 
@@ -52,8 +53,8 @@ export const Button = styled.button`
   border-radius: 5px;
   border: none;
   padding: 10px 20px;
-  margin-right: 10px;
   cursor: pointer;
+  margin-right: 20px;
 
   ${(props) =>
     props.primary &&
@@ -61,6 +62,11 @@ export const Button = styled.button`
       background: blue;
       color: white;
     `}
+   
+   @media ${device.tablet} {
+     margin-left: 20px;
+     margin-right: 0px;
+   }
 `;
 
 export const GridContainer = styled.div`

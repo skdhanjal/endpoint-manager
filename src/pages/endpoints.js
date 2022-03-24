@@ -9,17 +9,25 @@ import {
   Button
 } from "./styles";
 import Card from "../components/card/card";
-import data from "../../data/Endpoints.json";
+import allEndpoints from "../../data/Endpoints.json";
 import { AppContext } from "../appprovider";
+import { ENDPOINTS_URL } from "../utils/urls";
 
 class Endpoints extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      endpoints: data.slice(0, 20),
+      endpoints: allEndpoints,
       selectedEndpoint: null
     };
     this.onCardSelect = this.onCardSelect.bind(this);
+  }
+
+  componentDidMount() {
+    fetch(ENDPOINTS_URL)
+      .then((res) => res.json())
+      .then((data) => this.setState({ endpoints: data }))
+      .catch((err) => this.setState({ endpoints: allEndpoints }));
   }
 
   onCardSelect(card) {
